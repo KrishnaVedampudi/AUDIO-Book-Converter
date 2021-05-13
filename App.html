@@ -17,7 +17,18 @@
 
   <script id="pdf-js" src="pdf.js"></script>
   
-  <script>PDFJS.workerSrc = document.getElementById("pdf-js").getAttribute("src");</script>
+  <script>
+    if (!PDFJS.workerSrc && typeof document !== 'undefined') {
+  // workerSrc is not set -- using last script url to define default location
+  PDFJS.workerSrc = (function () {
+    'use strict';
+    var scriptTagContainer = document.body ||
+                             document.getElementsByTagName('head')[0];
+    var pdfjsSrc = scriptTagContainer.lastChild.src;
+    return pdfjsSrc && pdfjsSrc.replace(/\.js$/i, '.worker.js');
+  })();
+}
+PDFJS.workerSrc = document.getElementById("pdf-js").getAttribute("src");</script>
 
   <script>function App(){
   var self = this;
