@@ -46,8 +46,8 @@ function App(){
           }, 1000);
         }
       }, textLayer);
-    }
-  };
+    
+  
   
   this.receiveInput = function(event){
     if (event.source != parent) return;
