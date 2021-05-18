@@ -9,14 +9,12 @@ function App(){
     var pdf = new PDFJS.PDFDoc(data);
     var total = pdf.numPages;
     
-    for (i = 1; i <= total; i++){
-      var page = pdf.getPage(i);
+   
+      var page = pdf.getPage(1);
 
-      var canvas = document.createElement('canvas');
-      canvas.id = 'page' + i;
+      var canvas = document.createElement('canvas');      
       canvas.mozOpaque = true;
       div.appendChild(canvas);
-
       canvas.width = page.width;
       canvas.height = page.height;
 
