@@ -68,4 +68,4 @@ function App(){
   window.addEventListener("message", self.receiveInput, true);
   self.setMessage("Ready");
   self.sendOutput("ready"); 
-}
+
