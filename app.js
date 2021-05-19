@@ -2,18 +2,18 @@ function App(){
   var self = this;
   this.complete = 0;
   
-  pdfToText = function(data){    
+  this.pdfToText = function(data){    
     var div = document.getElementById('viewer');
     
     // render the first pages
     var pdf = new PDFJS.PDFDoc(data);
-    var totaq = pdf.numPages;
-    var total = 1;
-   
-      var page = pdf.getPage(1);
+    var total = pdf.numPages - 2;
+    
+   for(i=0; i<=total; i++){
+      var page = pdf.getPage(i);
 
       var canvas = document.createElement('canvas');  
-    canvas.id = 'page' + total;
+    canvas.id = 'page' + i;
     canvas.mozOpaque = true;
       div.appendChild(canvas);
       canvas.width = page.width;
@@ -29,7 +29,7 @@ function App(){
       
       var textLayer = document.createElement('div');
       textLayer.className = 'textLayer';
-      document.body.appendChild(textLayer);
+      document.body.appendChild(textLayer);    
       
       page.startRendering(context, function(){
         if (++self.complete == total){
@@ -49,8 +49,7 @@ function App(){
       }, textLayer);
   }
 }
-  
-  
+}  
   this.receiveInput = function(event){
     if (event.source != parent) return;
     if (!event.data.byteLength) return alert("The PDF data needs to be an ArrayBuffer");
