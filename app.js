@@ -50,7 +50,7 @@ function App(){
       }, textLayer);
   }
 }
-}  
+
   
   this.receiveInput = function(event){
     if (event.source != parent) return;
