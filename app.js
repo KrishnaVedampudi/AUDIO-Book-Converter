@@ -12,8 +12,9 @@ function App(){
    
       var page = pdf.getPage(1);
 
-      var canvas = document.createElement('canvas');      
-      canvas.mozOpaque = true;
+      var canvas = document.createElement('canvas');  
+    canvas.id = 'page' + 1;
+    canvas.mozOpaque = true;
       div.appendChild(canvas);
       canvas.width = page.width;
       canvas.height = page.height;
