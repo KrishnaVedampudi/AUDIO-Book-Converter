@@ -7,8 +7,8 @@ function App(){
     
     // render the first pages
     var pdf = new PDFJS.PDFDoc(data);
-    var total = pdf.numPages;
-    
+    var totaq = pdf.numPages;
+    var total = 1;
    
       var page = pdf.getPage(1);
 
