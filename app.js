@@ -2,7 +2,7 @@ function App(){
   var self = this;
   this.complete = 0;
   
-  this.pdfToText = function(data){    
+  pdfToText = function(data){    
     var div = document.getElementById('viewer');
     
     // render the first pages
