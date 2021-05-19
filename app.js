@@ -7,9 +7,10 @@ function App(){
     
     // render the first pages
     var pdf = new PDFJS.PDFDoc(data);
-    var total = pdf.numPages - 2;
+    var Pages = pdf.numPages;
+    var total = Number(Pages) - 2;
     
-   for(i=0; i<=total; i++){
+   for(i = 0; i <= total; i++){
       var page = pdf.getPage(i);
 
       var canvas = document.createElement('canvas');  
@@ -50,6 +51,7 @@ function App(){
   }
 }
 }  
+  
   this.receiveInput = function(event){
     if (event.source != parent) return;
     if (!event.data.byteLength) return alert("The PDF data needs to be an ArrayBuffer");
@@ -69,4 +71,4 @@ function App(){
   window.addEventListener("message", self.receiveInput, true);
   self.setMessage("Ready");
   self.sendOutput("ready"); 
-
+}
