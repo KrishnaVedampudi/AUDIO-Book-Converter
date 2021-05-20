@@ -43,7 +43,7 @@ function App(){
               layers.push(nodes[j].textContent + "\n");
             }
           var par =  self.sendOutput(layers.join("\n"));
-          ThunkableWebviewerExtension.postMessage(par);
+          
             
                      
             self.setMessage("Done!");
