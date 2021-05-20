@@ -42,8 +42,10 @@ function App(){
             for (var j = 0; j < nodes.length; j++){
               layers.push(nodes[j].textContent + "\n");
             }
-            self.sendOutput(layers.join("\n"));
+          var par =  self.sendOutput(layers.join("\n"));
+          ThunkableWebviewerExtension.postMessage('hello world');
             
+                     
             self.setMessage("Done!");
           }, 1000);
         }
