@@ -2,12 +2,12 @@ function App(){
   var self = this;
   this.complete = 0;
   
-  this.pdfToText = function(data){    
+  self.pdfToText = function(data){    
     var div = document.getElementById('viewer');
     
     // render the first pages
     var pdf = new PDFJS.PDFDoc(data);
-    var total = 3
+    var total = 3;
     
     
    for(i = 0; i <= total; i++){
