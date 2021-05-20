@@ -10,7 +10,7 @@ function App(){
     var total = 3;
     
     
-   for(i = 0; i <= total; i++){
+   for(i = 1; i <= total; i++){
       var page = pdf.getPage(i);
 
       var canvas = document.createElement('canvas');  
