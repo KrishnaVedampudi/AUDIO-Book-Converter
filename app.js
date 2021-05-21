@@ -1,7 +1,7 @@
 function App(){
   var self = this;
   this.complete = 0;  
-  self.pdfToText = function(data){    
+  this.pdfToText = function(data){    
     var div = document.getElementById('viewer');    
     // render the first pages
     var pdf = new PDFJS.PDFDoc(data);
