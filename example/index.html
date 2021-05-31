@@ -53,10 +53,15 @@
       break;
     }
   }, true);
-   var  par = document.getElementById("output").textContent;
-    ThunkableWebviewerExtension.postMessage(par);
-console.log(par);
-
+    
+    function send() 
+    {
+      var  par = document.getElementById("output").innerHTML;
+      ThunkableWebviewerExtension.postMessage(par);
+      console.log(par);
+    }
+   
+send();
   </script>
 
 </body>
